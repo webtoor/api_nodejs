@@ -4,16 +4,18 @@ var models = require('../models');
 var registerController = require('../controller/registerController')
 var loginController = require('../controller/loginController')
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function (req, res, next) {
+  res.render('index', {
+    title: 'Express'
+  });
 });
 
-/* GET home page. */
-router.get('/getuser', function(req, res, next) {
+/* GET home page.
+router.get('/getuser', function (req, res, next) {
   models.user.findAll().then(users => {
-  res.json(users);
-});
-});
+    res.json(users);
+  });
+});  */
 
 /* POST register page. */
 router.post('/register', registerController.register);
